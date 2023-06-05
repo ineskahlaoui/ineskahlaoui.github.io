@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>KIBRAM Visualizer</title>
+	<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+	<!-- NAVIGATION Hamburger menu -->
+	<!-- <nav class="navig">
+
+		<div class="navig_container">
+			<a href="#home" id="kibram_logo"> KIBRAM</a>
+			<div class="navig_toggle" id="mobile_menu">
+				<span class="bar"></span> <span class="bar"></span>
+				<span class="bar"></span>
+			</div>
+			<ul class="navig_menu">
+				<li class="navig_item">
+					<a href="#artists" class="navig_links" id="artists_section">Artists</a>
+				</li>
+				<li class="navig_item">
+					<a href="#audio" class="navig_links" id="audio_section">Tracks</a>
+				</li>
+				<li class="navig_item">
+					<a href="#ai" class="navig_links" id="ai_section">AI & Music</a>
+				</li>
+				<li class="navig_item">
+					<a href="#team" class="navig_links" id="team_section">Team</a>
+				</li>
+				<li class="navig_item">
+					<a href="https://github.com/com-480-data-visualization/project-2023-kibram" target="_blank">
+					  <img src="/images/pngegg.png" alt="Github" class="navig_links" id="github_logo">
+					</a>
+				</li>
+				
+			</ul>
+		</div>
+	</nav> -->
+
+	<!-- BANNER  -->
+    <div class="banner" id="home">
+		<div class="banner_container">
+		  <h1 class="banner_heading">Visualize music in a new way <span></span></h1>
+		  <p class="banner_description">Explore Spotify top charts and artists</p>
+		  <button class="main_btn"><a href="#artists">Show me!</a></button>
+		</div>
+	</div>
+
+	<!-- ARTISTS EXPLORATION -->
+    <div class="main" id="artists">
+		<div class="main_container">
+		  
+		  <div class="main_content">
+			<div style="display: flex;">
+				<div style="width: 40%;"> 
+					<h2>A Sonic Journey Through Spotify's top Artists</h2>
+					<p> Discover the galaxies of Spotify's top artists with our dazzling dot plot. Every artist is a star, plotted according to their popularity on the Spotify platform and the size of their ever-growing fan base. In the spirit of musical exploration, this visualization makes it simple for you to dive into the depths of what makes an artist truly stellar.
+						￼
+						Hover over each vibrant dot to reveal the identity of the artist. Who shines the brightest in the eyes of Spotify listeners? Who has nurtured the most extensive community of dedicated followers? Our plot aims to engage your curiosity and help you uncover the answers to these questions.
+						Click on any dot to venture further into the artist's unique universe. Your journey will be accompanied by an auditory teaser, a Spotify snippet of their top songs. Experience the sounds that propelled them to their place among the stars! </p>
+					<!-- <button class="main_btn"><a href="#"> Visualisation should go here</a></button> -->
+				</div>
+				<div id="artists_exploration" style="width: 60%;"></div>
+				 
+					
+				
+			</div>
+
+			<p> This 2-arc plot will further unravel the artist's discography on the platform. The first arc depicts their (rich) collection of albums, while the second reveals the top tracks that comprise each album. The arcs not only visualize the volume of the artist's work but also highlight their creative journey. Has their music evolved over time? Did their breakout hit appear early or late in their career? Our arc plot gives you a bird's-eye view of these fascinating nuances.
+				When you click on a track in the second arc, you will hear a Spotify snippet of the song. We also present some key features about it. This provides a deeper understanding of the track, adding another layer to your exploration!
+				This interactive exploration is not just about statistics or popularity; it's about engaging with the music and artists on a deeper level. We invite you to explore, listen, and immerse yourself in the rich tapestry of Spotify's top charts and artists. So let's embark on this musical journey together, one dot, one arc, one song at a time. Happy exploring!</p>
+			<h1> </h1>
+			<div class="artists_container">
+				<div class="top_songs"></div>
+				<div class="arcs"></div>
+				<div class="box"> 
+					<img id="imagePlaceholder" src="#" alt="Image Description" style="float: left; width: 100px; height: 100px; border-radius: 10%;">
+					<div id="nameContainer" style="float: left; padding-left: 10px; width: 60%; overflow: hidden; text-overflow: ellipsis;">
+							<h3 id="namePlaceholder">Name</h3>
+							<h4 id="artistNamePlaceholder">Artist Name</h4>
+
+						</div>
+						<div style="clear: both;"></div>
+					</br> 
+						<iframe id="songSnpippet" src="https://open.spotify.com/embed/track/0DWdj2oZMBFSzRsi2Cvfzf" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+					</br>
+						<div id="chartContainer" style="height: 150px;">
+							<!-- Chart will be inserted here -->
+						</div>
+					</br>
+						<p id="textPlaceholder">
+							<!-- Text will be inserted here -->
+						</p>
+					</br>
+						<div id="popularityBar" style="height: 200px;">
+							<h3>Popularity: </h3>
+							<!-- Chart will be inserted here -->
+						</div> 
+					
+				</div>
+			  </div>
+			  
+		  </div>
+		</div>
+	</div>
+
+	<!-- AUDIO ANALYSIS -->
+	<div class="audio" id="audio">
+		<div class="audio_container">
+	
+		  
+		  <div class="audio_content">
+			<h1>The Anatomy of a song: A Deeper Look into Spotify's Musical Features</h1>
+			<div style="display: flex; ">
+				<!-- First Column -->
+				<div style="width: 50%;">
+					
+					<div id="spider-chart"></div>
+					<p> Sometimes, we find ourselves magnetically drawn to the most random song. 
+						Ever wondered why? What makes our foot tap and our head bob to certain tunes, while others leave us unmoved? 
+						Could it be the rhythm, the tempo, or the tonality? Let's embark on a journey into the musical DNA of songs on Spotify.
+
+						Our tool offers a fascinating way to understand the songs you love. 
+						We enable you to choose any two songs from Spotify's top 1000, and present you with a detailed comparison of their musical features. 
+						But this is not just a dry, numerical comparison. 
+						Imagine the process as peering into the very soul of your favorite tracks, understanding what makes them resonate with you. </p>
+
+
+						<p>To make sense of these songs, we use a set of carefully selected 'musical' features. 
+							These features are divided into two main categories: confidence measures and perceptual measures. </p>
+						
+						<dl>
+							<dt> <b> Confidence measures </b></dt>
+							<dd>- <strong>Acousticness: </strong> How organic and unplugged is your favorite track? 
+								Acousticness measures the prevalence of acoustic sounds within the track.</dd>
+							<dd>- <strong>Liveness:</strong> Ever experienced the electrifying ambiance of a live concert? 
+								Liveness seeks to quantify that very sensation, detecting the presence of an audience in the track.</dd>
+							<dd>- <strong>Speechiness:</strong> This measures the presence of spoken words. 
+								It can help distinguish between music and spoken word pieces, like talk shows, audio books, or poetry.</dd>
+							<dt> <b>Perceptual measures</b> </Perceptual></dt>
+							<dd>- <strong>Energy:</strong> The intensity, speed, and noise level of a track contribute to its energy. Think of it as the track's adrenaline level.</dd>
+							<dd>- <strong>Loudness:</strong> This measure captures the average loudness across the entire track. It's a trip into the heart of the track's volume.</dd>
+							<dd>- <strong>Danceability:</strong> Ever wondered why some songs make you hit the dance floor? 
+								Danceability captures the suitability of a track for dancing, considering musical elements like tempo, rhythm stability, and beat strength.</dd>
+							<dd>- <strong>Valence:</strong> This reflects the musical positiveness of a track. 
+								High valence tracks sound more positive and cheerful, while low valence tracks sound more negative or melancholic.</dd>
+							</dl>
+					<iframe id="song1" src=" " width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+				</br>
+					<iframe id="song2" src=" " width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+					
+				</div>
+				<!-- Second Column -->
+				<div id="spider" style="width: 50%;">
+					<div style="display: flex; justify-content: space-between;padding-left: 80px;padding-right: 80px;">
+						<!-- First Song Select -->
+						<div id="first-song">
+							Select First Song:
+							<br/>
+							<div class="select-container">
+								<input type="text" id="first-song-searchInput" placeholder="Search..." onkeyup="filterFirstSongOptions()">
+								<div class="custom-dropdown" id="first-song-customDropdown"></div>
+							</div>
+						</div>
+					
+						<!-- Second Song Select -->
+						<div id="second-song">
+							Select Second Song:
+							<br/>
+							<div class="select-container">
+								<input type="text" id="second-song-searchInput" placeholder="Search..." onkeyup="filterSecondSongOptions()">
+								<div class="custom-dropdown" id="second-song-customDropdown"></div>
+							</div>
+						</div> 
+					</div>
+					
+				</div>
+				
+			</div>
+			<h2>Popularity and audio features correlation</h2>
+					<p> Music is a complex harmony of numerous elements, each contributing to the overall melody that captivates our hearts. 
+						We can better appreciate our favorite tracks by understanding the intricate relationships between their musical features. 
+						To assist you on this quest, we introduce this intuitive line plot.
+						This captivating visualization shows you the correlation between different features of a song. 
+						However, as the number of features can be overwhelming, we've simplified the plot for ease of understanding. 
+						You can choose any <strong>four features </strong> to display at once, making the visualization not just digestible but also customizable to your interests.
+						Are more popular songs generally more danceable? 
+						Is there a link between loudness and a song's popularity? 
+						Our line plot is your tool to explore these relationships and many more. 
+						It will empower you to decipher the secret ingredients that make a song popular among listeners.
+						Remember, music isn't just about listening, it's about understanding and appreciating the delicate balance of features that creates a symphony we love!
+						So dive deeper into the music universe, find patterns, and maybe, just maybe, get one step closer to figuring out <strong>the formula for the perfect song</strong>.
+					</p>
+
+			
+			<!-- <button class="main_btn"><a href="#"> Visualisation should go here</a></button> -->
+			<div class="multi-line"> 
+				<div style="display: flex; justify-content: space-between;">
+					<div id="attributeSelection">
+						<h3>Choose upto 4 features:</h3>
+						<div class="scrollable-container">
+							<label><input type="checkbox" class="attributeCheckbox" value="acousticness" checked> Acousticness</label><br>
+							<label><input type="checkbox" class="attributeCheckbox" value="danceability"  checked> Danceability</label><br>
+							<label><input type="checkbox" class="attributeCheckbox" value="duration"> Duration</label><br>
+							<label><input type="checkbox" class="attributeCheckbox" value="energy"> Energy</label><br>
+							<label><input type="checkbox" class="attributeCheckbox" value="instrumentalness"> Instrumentalness</label><br>
+							<label><input type="checkbox" class="attributeCheckbox" value="key"> Key</label><br>
+							<label><input type="checkbox" class="attributeCheckbox" value="liveness"> Liveness</label><br>
+							<label><input type="checkbox" class="attributeCheckbox" value="modality"> Modality</label><br>
+							<label><input type="checkbox" class="attributeCheckbox" value="speechiness"> Speechiness</label><br>
+							<label><input type="checkbox" class="attributeCheckbox" value="tempo"> Tempo</label><br>
+							<label><input type="checkbox" class="attributeCheckbox" value="valence"> Valence</label><br>
+						</div>
+						<button id="updateChart">Update Chart</button>
+					</div>
+				
+					<div id="chartContainerLine" style="width: 80%; padding-left: 50px;"></div>
+				</div>
+				
+		</div>
+
+		
+				
+				
+			</div>
+			
+			</div>
+		</div>
+
+	<!-- AI & MUSIC -->
+    <div class="ai" id="ai">
+		<div class="ai_container">
+		  <div class="ai_content">
+
+			<div style="display: flex;">
+				<div style="width: 50%;">
+					<h2>A Symphony in Clusters: Discovering New Musical Landscapes</h2>
+					<p> Each point in this intriguing musical constellation represents a track from the Spotify top 500. 
+						But the magic truly happens when you click on a point. As if touching a musical star, you get a Spotify snippet of the song it represents. 
+						Our clustered view not only simplifies the complexity of the vast musical landscape but also invites you to engage with it. 
+						It's an opportunity to immerse yourself in diverse musical patterns and to find out which cluster you gravitate towards.
+						
+						Do the songs in a particular cluster resonate with you? 
+						What is it about those songs that strike a chord in your heart?
+						 By clicking and listening to different tracks, you're not just exploring the top 500 songs, you're also discovering your musical preferences and, perhaps, unearthing new favorite songs along the way!
+						</p>
+					<iframe id="songSnpippetCluster" src="" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+				</div>
+				<div id="cluster" style="width: 50%;"></div>
+			</div>
+			
+			  
+		</div>
+		</div>
+	</div>
+
+	<!-- TEAM  -->
+	<div class="team" id="team">
+		<div class="team_container">
+		  <h1 class="team_heading">Meet the team! <span></span></h1>
+		  <div class="members">
+			<div class="member">
+			  <a href="https://www.linkedin.com/in/in%C3%A8s-kahlaoui-0862b71b8/" target="_blank">
+				<img src="/images/KI.jpeg" alt="KI2">
+			  </a>
+			  <h3>Inès Kahlaoui</h3>
+			</div>
+			<div class="member">
+			  <a href="https://www.linkedin.com/in/romain-berquet/" target="_blank">
+				<img src="/images/BR.jpeg" alt="BR">
+			  </a>
+			  <h3>Romain Berquet</h3>
+			</div>
+			<div class="member">
+			  <a href="https://www.linkedin.com/in/munier/" target="_blank">
+				<img src="/images/AM_temp.jpg" alt="AM">
+			  </a>
+			  <h3>Antoine Munier</h3>
+			</div>
+		  </div>
+		  <div style="align-items: center;"><button class="team_btn" ><a href="#">go to top</a></button></div>
+		  
+	  
+		  <div class="github_link" style="bottom: 0; left: 0; width: 5%; align-items: start; text-align: start;">
+			<a href="https://github.com/com-480-data-visualization/project-2023-kibram" style=" text-align: start;" target="_blank">
+			  <img src="/images/pngegg.png" alt="Github"  id="github_logo" style=" text-align: start;">
+			</a>
+		  </div>
+		</div>
+	  </div>
+	  
+	  <div id="tooltip"></div>
+	
+	<script src="https://d3js.org/d3.v7.min.js"></script>
+	<script src="script.js"></script>
+	<script src="spider chart.js"></script>
+	<script src="artistExploration.js"></script>
+	<script src="cluster.js"></script>
+	<script src="line chart.js"></script>
+</body>
+</html>
